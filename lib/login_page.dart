@@ -4,6 +4,7 @@ import 'package:transformore_app/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
+
   @override
   State<StatefulWidget> createState() {
     return new LoginPageState();
@@ -11,7 +12,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginPageState extends State<LoginPage> {
-
   bool isHidePassword = false;
 
   void passwordVisibility() {
@@ -22,43 +22,76 @@ class LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final logo = Hero (
-      tag: "hero",
-      child: CircleAvatar(
-        backgroundColor: Colors.transparent,
-        radius: 48,
-        child: Image.asset('assets/images/dummy_logo.png'),
-      ),
-    );
+    List<Widget> children = new List();
 
-    final emailEditText = TextFormField(
-      keyboardType: TextInputType.emailAddress,
-      autofocus: false,
-      decoration: InputDecoration(
-        hintText: 'Email',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(5))
-      ),
-    );
+    Widget buildBackground() => new Scaffold(
+          appBar: PreferredSize(
+              preferredSize: Size.fromHeight(250), // here the desired height
+              child: AppBar()),
+        );
 
+    children.add(buildBackground());
 
-    final passwordEditText = TextFormField(
-      autofocus: false,
-      obscureText: true,
-      decoration: InputDecoration(
-        hintText: 'Password',
-        suffixIcon: GestureDetector(
-          onTap: () {
-            passwordVisibility();
-          },
-          child: Icon(
-            isHidePassword ? Icons.visibility_off : Icons.visibility,
-            color: isHidePassword ? Colors.grey : Colors.blueAccent,
+    final emailEditText = Column(
+      children: <Widget>[
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Container(
+            margin: EdgeInsets.only(bottom: 5),
+            child: Text(
+              "NRP",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16),
+            ),
           ),
         ),
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-      ),
+        Container(
+          child: TextFormField(
+            autofocus: false,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+            ),
+          ),
+        )
+      ],
+    );
+
+    final passwordEditText = Column(
+      children: <Widget>[
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Container(
+            margin: EdgeInsets.only(bottom: 5),
+            child: Text(
+              "Password",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16),
+            ),
+          ),
+        ),
+        Container(
+          child: TextFormField(
+            autofocus: false,
+            obscureText: true,
+            decoration: InputDecoration(
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  passwordVisibility();
+                },
+                child: Icon(
+                  isHidePassword ? Icons.visibility_off : Icons.visibility,
+                  color: isHidePassword ? Colors.grey : Colors.blueAccent,
+                ),
+              ),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+            ),
+          ),
+        )
+      ],
     );
 
     final loginButton = Padding(
@@ -66,7 +99,6 @@ class LoginPageState extends State<LoginPage> {
       child: Material(
         borderRadius: BorderRadius.circular(5),
         shadowColor: Colors.orangeAccent.shade100,
-        elevation: 5,
         child: MaterialButton(
           minWidth: 200,
           height: 42,
@@ -87,25 +119,34 @@ class LoginPageState extends State<LoginPage> {
       onPressed: () {},
     );
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
+    final widgets = Container(
+      padding: EdgeInsets.all(15),
+      child: Card(
+        margin: EdgeInsets.fromLTRB(15, 150, 15, 15),
         child: ListView(
           shrinkWrap: true,
-          padding: EdgeInsets.only(left: 24.0, right: 24.0),
+          padding: EdgeInsets.all(25),
           children: <Widget>[
-            logo,
-            SizedBox(height: 48,),
             emailEditText,
-            SizedBox(height: 48,),
+            SizedBox(
+              height: 30,
+            ),
             passwordEditText,
-            SizedBox(height: 24,),
+            SizedBox(
+              height: 24,
+            ),
             loginButton,
             forgotLabel
           ],
         ),
       ),
     );
-  }
+    children.add(widgets);
 
+    return Scaffold(
+      body: Stack(
+        children: children,
+      ),
+    );
+  }
 }

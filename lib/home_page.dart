@@ -1,3 +1,4 @@
+import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:transformore_app/teamwork/teamwork_home_page.dart';
@@ -19,17 +20,21 @@ class HomePageState extends State<HomePage> {
       return DrawerHeader(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
-        decoration: BoxDecoration(color: Colors.blueAccent),
+        decoration: BoxDecoration(color: Colors.indigo),
         child: Stack(
           children: <Widget>[
-            Hero(
-              tag: "hero",
-              child: CircleAvatar(
-                backgroundColor: Colors.transparent,
-                radius: 48,
-                child: Image.asset('assets/images/user_icon.png'),
-              ),
-            ),
+            Container(
+              margin: EdgeInsets.all(15),
+             child: Hero(
+               tag: "hero",
+               child: CircleAvatar(
+                 backgroundColor: Colors.white,
+                 radius: 48,
+                 child: Image.asset('assets/images/user.png'),
+               ),
+             ),
+            )
+            ,
             SizedBox(
               height: 15,
             ),
@@ -64,7 +69,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(Icons.dashboard),
+                Icon(Icons.dashboard, color: Colors.indigo),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Dashboard"),
@@ -78,7 +83,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(Icons.report),
+                Icon(FeatherIcons.command, color: Colors.indigo,),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Teamwork"),
@@ -92,7 +97,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(Icons.report),
+                Icon(FeatherIcons.codepen, color: Colors.indigo),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Safety & Environment"),
@@ -106,7 +111,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(Icons.report),
+                Icon(FeatherIcons.sliders, color: Colors.indigo),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Operation"),
@@ -120,7 +125,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(Icons.report),
+                Icon(FeatherIcons.repeat, color: Colors.indigo),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Transaction"),
@@ -134,7 +139,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(Icons.report),
+                Icon(FeatherIcons.trendingUp, color: Colors.indigo),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("QMM"),
@@ -148,7 +153,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(Icons.report),
+                Icon(FeatherIcons.settings, color: Colors.indigo),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("System"),

@@ -1,6 +1,8 @@
+import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:transformore_app/teamwork/form_home_page.dart';
+import 'package:transformore_app/teamwork/form/form_home_page.dart';
+import 'package:transformore_app/teamwork/time/time_management_page.dart';
 
 class TeamworkHome extends StatelessWidget {
   static String tag = 'teamwork-home-page';
@@ -26,14 +28,14 @@ class TeamworkHome extends StatelessWidget {
         children: <Widget>[
           ListTile(
             leading: Icon(
-              Icons.format_list_bulleted,
-              color: Colors.blueAccent,
+              FeatherIcons.list,
+              color: Colors.indigo,
             ),
             title: Text(
               'Form',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => FormHome()));
@@ -50,14 +52,14 @@ class TeamworkHome extends StatelessWidget {
         children: <Widget>[
           const ListTile(
             leading: Icon(
-              Icons.receipt,
-              color: Colors.blueAccent,
+              FeatherIcons.fileText,
+              color: Colors.indigo,
             ),
             title: Text(
               'Report',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
           )
         ],
       ),
@@ -70,14 +72,14 @@ class TeamworkHome extends StatelessWidget {
         children: <Widget>[
           const ListTile(
             leading: Icon(
-              Icons.check_box,
-              color: Colors.blueAccent,
+              FeatherIcons.checkSquare,
+              color: Colors.indigo,
             ),
             title: Text(
               'Approval',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
           )
         ],
       ),
@@ -88,16 +90,20 @@ class TeamworkHome extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const ListTile(
+          ListTile(
             leading: Icon(
-              Icons.access_time,
-              color: Colors.blueAccent,
+              FeatherIcons.clock,
+              color: Colors.indigo,
             ),
             title: Text(
               'Time Management',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => TimeManagementPage()));
+            },
           )
         ],
       ),
@@ -110,14 +116,14 @@ class TeamworkHome extends StatelessWidget {
         children: <Widget>[
           const ListTile(
             leading: Icon(
-              Icons.grid_on,
-              color: Colors.blueAccent,
+              FeatherIcons.grid,
+              color: Colors.indigo,
             ),
             title: Text(
               'Report',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
           )
         ],
       ),

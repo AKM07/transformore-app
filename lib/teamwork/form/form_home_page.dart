@@ -1,5 +1,7 @@
+import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:transformore_app/teamwork/attendance_revision_page.dart';
 
 class FormHome extends StatelessWidget {
   static String tag = 'form-home-page';
@@ -24,14 +26,14 @@ class FormHome extends StatelessWidget {
         children: <Widget>[
           const ListTile(
             leading: Icon(
-              Icons.format_list_bulleted,
-              color: Colors.blueAccent,
+              FeatherIcons.fileText,
+              color: Colors.indigo,
             ),
             title: Text(
               'Upload Roster',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
           )
         ],
       ),
@@ -44,14 +46,14 @@ class FormHome extends StatelessWidget {
         children: <Widget>[
           const ListTile(
             leading: Icon(
-              Icons.receipt,
-              color: Colors.blueAccent,
+              FeatherIcons.externalLink,
+              color: Colors.indigo,
             ),
             title: Text(
               'Update Roster',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
           )
         ],
       ),
@@ -64,14 +66,14 @@ class FormHome extends StatelessWidget {
         children: <Widget>[
           const ListTile(
             leading: Icon(
-              Icons.check_box,
-              color: Colors.blueAccent,
+              FeatherIcons.userCheck,
+              color: Colors.indigo,
             ),
             title: Text(
               'Set Roster',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
           )
         ],
       ),
@@ -82,16 +84,20 @@ class FormHome extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const ListTile(
+          ListTile(
             leading: Icon(
-              Icons.access_time,
-              color: Colors.blueAccent,
+              FeatherIcons.edit,
+              color: Colors.indigo,
             ),
             title: Text(
               'Attendance Revision',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => AttendanceRevisionPage()));
+            },
           )
         ],
       ),
@@ -104,18 +110,20 @@ class FormHome extends StatelessWidget {
         children: <Widget>[
           const ListTile(
             leading: Icon(
-              Icons.grid_on,
-              color: Colors.blueAccent,
+              FeatherIcons.file,
+              color: Colors.indigo,
             ),
             title: Text(
               'Leave Application',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Icon(Icons.navigate_next, color: Colors.blueAccent),
+            trailing: Icon(Icons.navigate_next, color: Colors.indigo),
           )
         ],
       ),
     );
+
+
 
     final cards = Container(
       margin: EdgeInsets.fromLTRB(15, 100, 15, 0),
