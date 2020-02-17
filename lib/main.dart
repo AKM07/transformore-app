@@ -23,16 +23,11 @@ class MyApp extends StatelessWidget {
       title: 'Transformore',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primaryColor: Colors.blue[500],
+        fontFamily: 'Poppins'
       ),
       home: LoginPage(),
       routes: routes,
     );
   }
-
-//  @override
-//  void dispose(){
-//    controller.dispose();
-//    super.dispose();
-//  }
 }

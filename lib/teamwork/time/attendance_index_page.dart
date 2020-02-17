@@ -103,15 +103,18 @@ class AttendanceIndexState extends State<AttendanceIndex> {
     final searchButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16),
       child: Material(
-        borderRadius: BorderRadius.circular(5),
         shadowColor: Colors.orangeAccent.shade100,
         child: MaterialButton(
+          shape: RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(8.0),
+          side: BorderSide(color: Colors.orange[500])
+        ),
           minWidth: 200,
           height: 42,
           onPressed: () {
 //            Navigator.of(context).pushNamed(HomePage.tag);
           },
-          color: Colors.orange,
+          color: Colors.orange[500],
           child: Text('Cari', style: TextStyle(color: Colors.white)),
         ),
       ),

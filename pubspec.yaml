@@ -27,7 +27,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 flutter:
-
   uses-material-design: true
   assets:
     - assets/images/dummy_logo.png
@@ -35,4 +34,9 @@ flutter:
     - assets/images/user.png
     - assets/images/email_icon.png
     - assets/images/ic_teamwork.png
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins/Poppins-Regular.ttf
+        - asset: fonts/Poppins/Poppins-Italic.ttf
 

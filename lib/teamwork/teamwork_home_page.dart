@@ -15,7 +15,7 @@ class TeamworkHome extends StatelessWidget {
           appBar: PreferredSize(
               preferredSize: Size.fromHeight(150.0), // here the desired height
               child: AppBar(
-                title: Text("Teamwork"),
+                title: Text("Teamwork", style: TextStyle(fontFamily: 'Poppins'),),
               )),
         );
 

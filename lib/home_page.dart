@@ -20,7 +20,7 @@ class HomePageState extends State<HomePage> {
       return DrawerHeader(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
-        decoration: BoxDecoration(color: Colors.indigo),
+        decoration: BoxDecoration(color: Colors.blue),
         child: Stack(
           children: <Widget>[
             Container(
