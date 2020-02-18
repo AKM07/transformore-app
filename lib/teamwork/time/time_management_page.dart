@@ -1,3 +1,4 @@
+import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:transformore_app/teamwork/time/holiday_page.dart' as holiday;
@@ -38,7 +39,7 @@ class TimeManagementState extends State<TimeManagementPage> with SingleTickerPro
             controller: controller,
             tabs: <Widget>[
               new Tab(icon: new Icon(Icons.access_time, color: Colors.white,), text: "Holiday",),
-              new Tab(icon: new Icon(Icons.queue_music, color: Colors.white,),text: "Attendance Index",),
+              new Tab(icon: new Icon(FeatherIcons.calendar, color: Colors.white,),text: "Attendance Index",),
             ]),
       ),
       resizeToAvoidBottomPadding: false,

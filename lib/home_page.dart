@@ -20,7 +20,7 @@ class HomePageState extends State<HomePage> {
       return DrawerHeader(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
-        decoration: BoxDecoration(color: Colors.blue),
+        decoration: BoxDecoration(color: Colors.blue[700]),
         child: Stack(
           children: <Widget>[
             Container(
@@ -69,7 +69,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(Icons.dashboard, color: Colors.indigo),
+                Icon(Icons.dashboard, color: Colors.blue[700]),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Dashboard"),
@@ -83,7 +83,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(FeatherIcons.command, color: Colors.indigo,),
+                Icon(FeatherIcons.command, color: Colors.blue[700],),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Teamwork"),
@@ -97,7 +97,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(FeatherIcons.codepen, color: Colors.indigo),
+                Icon(FeatherIcons.codepen, color: Colors.blue[700]),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Safety & Environment"),
@@ -111,7 +111,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(FeatherIcons.sliders, color: Colors.indigo),
+                Icon(FeatherIcons.sliders, color: Colors.blue[700]),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Operation"),
@@ -125,7 +125,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(FeatherIcons.repeat, color: Colors.indigo),
+                Icon(FeatherIcons.repeat, color: Colors.blue[700]),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("Transaction"),
@@ -139,7 +139,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(FeatherIcons.trendingUp, color: Colors.indigo),
+                Icon(FeatherIcons.trendingUp, color: Colors.blue[700]),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("QMM"),
@@ -153,7 +153,7 @@ class HomePageState extends State<HomePage> {
           ListTile(
             title: Row(
               children: <Widget>[
-                Icon(FeatherIcons.settings, color: Colors.indigo),
+                Icon(FeatherIcons.settings, color: Colors.blue[700]),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("System"),

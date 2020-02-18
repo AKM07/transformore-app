@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Transformore',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.blue[500],
+        primaryColor: Colors.blue[700],
         fontFamily: 'Poppins'
       ),
       home: LoginPage(),
