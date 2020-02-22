@@ -1,11 +1,9 @@
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:transformore_app/teamwork/attendance_revision_page.dart';
-import 'package:transformore_app/teamwork/form/set_roster_page.dart';
 
-class FormHome extends StatelessWidget {
-  static String tag = 'form-home-page';
+class HCHomePage extends StatelessWidget {
+  static String tag = 'hc-home-page';
 
   @override
   Widget build(BuildContext context) {
@@ -15,49 +13,22 @@ class FormHome extends StatelessWidget {
     final double itemWidth = 300;
 
     Widget buildBackground() => new Scaffold(
-          appBar: PreferredSize(
-              preferredSize: Size.fromHeight(150), // here the desired height
-              child: AppBar(
-                title: Text("Form"),
-                leading: new IconButton(
-                  icon: new Icon(
-                    FeatherIcons.list,
-                    color: Colors.white,
-                  ),
-                ),
-              )),
-        );
-
-    children.add(buildBackground());
-
-    final updateCard = Container(
-      height: 300,
-      padding: EdgeInsets.all(10),
-      child: Card(
-        color: Colors.blue[700],
-        elevation: 3,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Center(
-              child: Icon(
-                FeatherIcons.externalLink,
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(150), // here the desired height
+          child: AppBar(
+            title: Text("HC"),
+            leading: new IconButton(
+              icon: new Icon(
+                FeatherIcons.grid,
                 color: Colors.white,
               ),
             ),
-            Center(
-              child: Text(
-                "Update Roster",
-                style: TextStyle(color: Colors.white, fontSize: 14),
-              ),
-            )
-          ],
-        ),
-      ),
+          )),
     );
 
-    final setRosterCard = Container(
+    children.add(buildBackground());
+
+    final personalCard = Container(
       height: 300,
       padding: EdgeInsets.all(10),
       child: GestureDetector(
@@ -70,13 +41,13 @@ class FormHome extends StatelessWidget {
             children: <Widget>[
               Center(
                 child: Icon(
-                  FeatherIcons.userCheck,
+                  FeatherIcons.users,
                   color: Colors.white,
                 ),
               ),
               Center(
                 child: Text(
-                  "Set Roster",
+                  "Personal",
                   style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
               )
@@ -85,12 +56,12 @@ class FormHome extends StatelessWidget {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => SetRosterPage()));
+              MaterialPageRoute(builder: (context) => null));
         },
       ),
     );
 
-    final attendanceCard = Container(
+    final pkwtCard = Container(
       height: 300,
       padding: EdgeInsets.all(10),
       child: GestureDetector(
@@ -103,13 +74,13 @@ class FormHome extends StatelessWidget {
             children: <Widget>[
               Center(
                 child: Icon(
-                  FeatherIcons.edit,
+                  FeatherIcons.repeat,
                   color: Colors.white,
                 ),
               ),
               Center(
                 child: Text(
-                  "Attendance Revision",
+                  "PKWT",
                   style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
               )
@@ -118,44 +89,10 @@ class FormHome extends StatelessWidget {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => AttendanceRevisionPage()));
+              MaterialPageRoute(builder: (context) => null));
         },
       ),
     );
-
-    final leaveCard = Container(
-      height: 300,
-      padding: EdgeInsets.all(10),
-      child: GestureDetector(
-        child: Card(
-          color: Colors.blue[700],
-          elevation: 3,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Center(
-                child: Icon(
-                  FeatherIcons.file,
-                  color: Colors.white,
-                ),
-              ),
-              Center(
-                child: Text(
-                  "Leave Application",
-                  style: TextStyle(color: Colors.white, fontSize: 14),
-                ),
-              )
-            ],
-          ),
-        ),
-        onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => AttendanceRevisionPage()));
-        },
-      ),
-    );;
-
     final gridContainer = Container(
       color: Colors.white,
       child: GridView.count(
@@ -164,10 +101,8 @@ class FormHome extends StatelessWidget {
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),
         children: <Widget>[
-          updateCard,
-          setRosterCard,
-          attendanceCard,
-          leaveCard,
+          personalCard,
+          pkwtCard,
         ],
       ),
     );
@@ -193,7 +128,7 @@ class FormHome extends StatelessWidget {
                               fontWeight: FontWeight.bold)),
                       Text("Pilih menu yang akan dioperasikan",
                           style:
-                              TextStyle(color: Colors.blue[700], fontSize: 14)),
+                          TextStyle(color: Colors.blue[700], fontSize: 14)),
                       gridContainer
                     ],
                   )),

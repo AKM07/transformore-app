@@ -48,7 +48,7 @@ class AttendanceRevisionState extends State<AttendanceRevisionPage> {
             decoration: InputDecoration(
                 border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-                prefixIcon: Icon(FeatherIcons.chevronDown)),
+                suffixIcon: Icon(FeatherIcons.chevronDown)),
             enabled: false,
           ),
         )
@@ -76,7 +76,7 @@ class AttendanceRevisionState extends State<AttendanceRevisionPage> {
             decoration: InputDecoration(
                 border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-                prefixIcon: Icon(Icons.date_range)),
+                suffixIcon: Icon(Icons.date_range)),
             enabled: false,
           ),
         )
@@ -104,7 +104,7 @@ class AttendanceRevisionState extends State<AttendanceRevisionPage> {
             decoration: InputDecoration(
                 border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-                prefixIcon: Icon(Icons.access_time)),
+                suffixIcon: Icon(Icons.access_time)),
             enabled: false,
           ),
         )
@@ -132,7 +132,7 @@ class AttendanceRevisionState extends State<AttendanceRevisionPage> {
             decoration: InputDecoration(
                 border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-                prefixIcon: Icon(Icons.access_time)),
+                suffixIcon: Icon(Icons.access_time)),
             enabled: false,
           ),
         )
@@ -160,7 +160,7 @@ class AttendanceRevisionState extends State<AttendanceRevisionPage> {
             decoration: InputDecoration(
                 border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-                prefixIcon: Icon(FeatherIcons.chevronDown)),
+                suffixIcon: Icon(FeatherIcons.chevronDown)),
             enabled: false,
           ),
         )

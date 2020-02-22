@@ -32,6 +32,17 @@ class LoginPageState extends State<LoginPage> {
 
     children.add(buildBackground());
 
+    final logo = Center(
+      child: Container(
+          width: 150,
+          height: 150,
+          decoration: new BoxDecoration(
+              shape: BoxShape.circle,
+              image: new DecorationImage(
+                  fit: BoxFit.cover,
+                  image: new NetworkImage("https://i.imgur.com/IvUfbg4.jpg")))),
+    );
+
     final emailEditText = Column(
       children: <Widget>[
         Align(
@@ -51,7 +62,8 @@ class LoginPageState extends State<LoginPage> {
           child: TextFormField(
             autofocus: false,
             decoration: InputDecoration(
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
             ),
           ),
         )
@@ -87,7 +99,8 @@ class LoginPageState extends State<LoginPage> {
                   color: isHidePassword ? Colors.grey : Colors.blueAccent,
                 ),
               ),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
             ),
           ),
         )
@@ -127,6 +140,10 @@ class LoginPageState extends State<LoginPage> {
           shrinkWrap: true,
           padding: EdgeInsets.all(25),
           children: <Widget>[
+            logo,
+            SizedBox(
+              height: 20,
+            ),
             emailEditText,
             SizedBox(
               height: 30,

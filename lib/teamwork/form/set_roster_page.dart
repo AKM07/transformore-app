@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SetRosterPage extends StatefulWidget {
+  static String tag = 'set-roster-page';
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return null;
+    return new SetRosterState();
   }
 
 }
@@ -34,7 +34,7 @@ class SetRosterState extends State<SetRosterPage> {
     Widget buildBackground() => new Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(250), // here the desired height
-          child: AppBar()),
+          child: AppBar(title: Text("Set Roster"),)),
     );
 
     children.add(buildBackground());
@@ -86,7 +86,7 @@ class SetRosterState extends State<SetRosterPage> {
             decoration: InputDecoration(
                 border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-                prefixIcon: Icon(Icons.date_range),),
+                suffixIcon: Icon(Icons.date_range),),
             enabled: false,
             onTap: () {
               selectDate(context);
@@ -117,7 +117,7 @@ class SetRosterState extends State<SetRosterPage> {
             decoration: InputDecoration(
                 border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-                prefixIcon: Icon(Icons.date_range),),
+                suffixIcon: Icon(Icons.date_range),),
             enabled: false,
             onTap: () {
               selectDate(context);

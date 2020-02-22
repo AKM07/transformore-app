@@ -8,172 +8,145 @@ class HomePage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return new HomePageState();
   }
 }
 
 class HomePageState extends State<HomePage> {
+  int tabIndex = 0;
+
+  void onNavBarTapped(int index) {
+    setState(() {
+      tabIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    Widget createDrawerHeader() {
-      return DrawerHeader(
-        margin: EdgeInsets.zero,
-        padding: EdgeInsets.zero,
-        decoration: BoxDecoration(color: Colors.blue[700]),
-        child: Stack(
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.all(15),
-             child: Hero(
-               tag: "hero",
-               child: CircleAvatar(
-                 backgroundColor: Colors.white,
-                 radius: 48,
-                 child: Image.asset('assets/images/user.png'),
-               ),
-             ),
-            )
-            ,
-            SizedBox(
-              height: 15,
-            ),
-            Positioned(
-              bottom: 12,
-              left: 16,
-              child: Text(
-                'User Fullname',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500),
-              ),
-            )
-          ],
-        ),
-      );
-    }
+    List<Widget> children = new List();
 
-    final homeText = Center(
-      child: Text(
-        'Home',
-        style: TextStyle(color: Colors.black, fontSize: 16),
-      ),
-    );
+    Widget buildBackground() =>
+        new Scaffold(
+          appBar: PreferredSize(
+              preferredSize: Size.fromHeight(150), // here the desired height
+              child: AppBar(title: Text("Home"),
+                leading: new IconButton(
+                  icon: new Icon(FeatherIcons.home, color: Colors.white,),
+                ),
+              )),
+        );
 
-    final drawer = Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
+    children.add(buildBackground());
+
+    final image = Container(
+        width: 100,
+        height: 100,
+        margin: EdgeInsets.all(10),
+        decoration: new BoxDecoration(
+            shape: BoxShape.circle,
+            image: new DecorationImage(
+                fit: BoxFit.cover,
+                image: new NetworkImage("https://i.imgur.com/IvUfbg4.jpg"))));
+
+    final textContainer = Container(
+      margin: EdgeInsets.all(15),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          createDrawerHeader(),
-          ListTile(
-            title: Row(
-              children: <Widget>[
-                Icon(Icons.dashboard, color: Colors.blue[700]),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text("Dashboard"),
-                ),
-              ],
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 5),
+              child: Text(
+                "Selamat Datang",
+                style: TextStyle(
+                    color: Colors.blue[700],
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "");
-            },
           ),
-          ListTile(
-            title: Row(
-              children: <Widget>[
-                Icon(FeatherIcons.command, color: Colors.blue[700],),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text("Teamwork"),
-                ),
-              ],
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 5),
+              child: Text(
+                "User Fullname",
+                style: TextStyle(color: Colors.blue[700], fontSize: 14),
+              ),
             ),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => TeamworkHome()));
-            },
           ),
-          ListTile(
-            title: Row(
-              children: <Widget>[
-                Icon(FeatherIcons.codepen, color: Colors.blue[700]),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text("Safety & Environment"),
-                ),
-              ],
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 5),
+              child: Text(
+                "NIP 1234567",
+                style: TextStyle(color: Colors.blue[700], fontSize: 14),
+              ),
             ),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "");
-            },
-          ),
-          ListTile(
-            title: Row(
-              children: <Widget>[
-                Icon(FeatherIcons.sliders, color: Colors.blue[700]),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text("Operation"),
-                ),
-              ],
-            ),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "");
-            },
-          ),
-          ListTile(
-            title: Row(
-              children: <Widget>[
-                Icon(FeatherIcons.repeat, color: Colors.blue[700]),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text("Transaction"),
-                ),
-              ],
-            ),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "");
-            },
-          ),
-          ListTile(
-            title: Row(
-              children: <Widget>[
-                Icon(FeatherIcons.trendingUp, color: Colors.blue[700]),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text("QMM"),
-                ),
-              ],
-            ),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "");
-            },
-          ),
-          ListTile(
-            title: Row(
-              children: <Widget>[
-                Icon(FeatherIcons.settings, color: Colors.blue[700]),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text("System"),
-                ),
-              ],
-            ),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "");
-            },
           ),
         ],
       ),
     );
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Transformore'),
+    final cardContainer = Row(
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        image,
+        textContainer
+      ],
+    );
+
+    final widget = Container(
+      height: 300,
+      padding: EdgeInsets.all(15),
+      child: Card(
+          margin: EdgeInsets.fromLTRB(15, 100, 15, 15),
+          child: cardContainer
       ),
-      body: homeText,
-      drawer: drawer,
+    );
+    children.add(widget);
+    final stack = Stack(
+      children: children,
+    );
+
+
+    final pages = <Widget>[stack, TeamworkHome(), stack, stack];
+
+    final bottomNavBarItems = <BottomNavigationBarItem>[
+      BottomNavigationBarItem(
+        icon: Icon(FeatherIcons.home),
+        title: Text('Home'),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(FeatherIcons.command),
+        title: Text('Teamwork'),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(FeatherIcons.codepen),
+        title: Text('Safety & Environment'),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(FeatherIcons.moreHorizontal),
+        title: Text('Lainnya'),
+      ),
+    ];
+
+    final bottomNavBar = BottomNavigationBar(
+      items: bottomNavBarItems,
+      currentIndex: tabIndex,
+      selectedItemColor: Colors.blue[700],
+      unselectedItemColor: Colors.grey,
+      onTap: onNavBarTapped,
+    );
+
+    return Scaffold(
+      body: Center(
+        child: pages[tabIndex],
+      ),
+      bottomNavigationBar: bottomNavBar,
     );
   }
 }

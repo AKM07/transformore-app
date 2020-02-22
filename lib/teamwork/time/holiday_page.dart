@@ -52,55 +52,56 @@ class HolidayState extends State<HolidayPage> {
       ),
     );
 
-    final listView = Container(
-      padding: EdgeInsets.all(15),
-      child: Card(
-        child: Column(
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.all(15),
-              margin: EdgeInsets.only(bottom: 5),
-              child: Row(
-                children: <Widget>[
-                  Text("Result",
-                      style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.indigo,
-                          fontSize: 18)),
-                ],
-              ),
-            ),
-            Container(
-              height: 500,
-              padding: EdgeInsets.all(15),
-              child: ListView.builder(
-                itemCount: attendanceList.length,
-                itemBuilder: (context, i) {
-                  return new ExpansionTile(
-                    leading: Icon(
-                      isExpanded
-                          ? Icons.indeterminate_check_box
-                          : Icons.add_box,
-                      color: Colors.black,
-                    ),
-                    onExpansionChanged: iconMode,
-                    title: new Text(attendanceList[i].date,
+    final listView = Expanded(
+      child: Container(
+        padding: EdgeInsets.all(15),
+        child: Card(
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(15),
+                margin: EdgeInsets.only(bottom: 5),
+                child: Row(
+                  children: <Widget>[
+                    Text("Result",
                         style: new TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                    children: <Widget>[
-                      new Column(
-                        children: buildExpandableContent(attendanceList[i]),
-                      ),
-                    ],
-                  );
-                },
+                            fontWeight: FontWeight.bold,
+                            color: Colors.indigo,
+                            fontSize: 18)),
+                  ],
+                ),
               ),
-            )
-          ],
+              Container(
+                height: 500,
+                padding: EdgeInsets.all(15),
+                child: ListView.builder(
+                  itemCount: attendanceList.length,
+                  itemBuilder: (context, i) {
+                    return new ExpansionTile(
+                      leading: Icon(
+                        isExpanded
+                            ? Icons.indeterminate_check_box
+                            : Icons.add_box,
+                        color: Colors.black,
+                      ),
+                      onExpansionChanged: iconMode,
+                      title: new Text(attendanceList[i].date,
+                          style: new TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                      children: <Widget>[
+                        new Column(
+                          children: buildExpandableContent(attendanceList[i]),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
-
     return new Container(
       child: new Center(
         child: Column(
@@ -151,7 +152,8 @@ class HolidayState extends State<HolidayPage> {
 //            Navigator.of(context).pushNamed(HomePage.tag);
                       },
                       color: Colors.indigo,
-                      child: Text('Edit', style: TextStyle(color: Colors.white)),
+                      child:
+                          Text('Edit', style: TextStyle(color: Colors.white)),
                     ),
                   ),
                   MaterialButton(
@@ -161,7 +163,8 @@ class HolidayState extends State<HolidayPage> {
 //            Navigator.of(context).pushNamed(HomePage.tag);
                     },
                     color: Colors.indigo,
-                    child: Text('Delete', style: TextStyle(color: Colors.white)),
+                    child:
+                        Text('Delete', style: TextStyle(color: Colors.white)),
                   )
                 ],
               ),

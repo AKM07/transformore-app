@@ -14,7 +14,7 @@ description: Transformore Android and IOS App
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -22,6 +22,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   feather_icons_flutter: 4.7.4
+  expandable_bottom_bar: any
 
 dev_dependencies:
   flutter_test:
