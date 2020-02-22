@@ -5,6 +5,7 @@ import 'package:transformore_app/teamwork/approval/approval_page.dart';
 import 'package:transformore_app/teamwork/attendance_revision_page.dart';
 import 'package:transformore_app/teamwork/form/set_roster_page.dart';
 import 'package:transformore_app/teamwork/hc/hc_home_page.dart';
+import 'package:transformore_app/teamwork/hc/personel_page.dart';
 import 'package:transformore_app/teamwork/teamwork_home_page.dart';
 import 'package:transformore_app/teamwork/time/time_management_page.dart';
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
     AttendanceRevisionPage.tag: (context) => AttendanceRevisionPage(),
     SetRosterPage.tag: (context) => SetRosterPage(),
     ApprovalPage.tag: (context) => ApprovalPage(),
-    ApprovalPage.tag: (context) => HCHomePage(),
+    HCHomePage.tag: (context) => HCHomePage(),
+    PersonelPage.tag: (context) => PersonelPage(),
   };
 
   @override

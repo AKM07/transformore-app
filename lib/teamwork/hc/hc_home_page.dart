@@ -1,6 +1,7 @@
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:transformore_app/teamwork/hc/personel_page.dart';
 
 class HCHomePage extends StatelessWidget {
   static String tag = 'hc-home-page';
@@ -56,7 +57,7 @@ class HCHomePage extends StatelessWidget {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => null));
+              MaterialPageRoute(builder: (context) => PersonelPage()));
         },
       ),
     );
