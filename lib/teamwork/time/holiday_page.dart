@@ -52,7 +52,7 @@ class HolidayState extends State<HolidayPage> {
       ),
     );
 
-    final listView = Expanded(
+    final listView = Container(
       child: Container(
         padding: EdgeInsets.all(15),
         child: Card(
@@ -102,7 +102,7 @@ class HolidayState extends State<HolidayPage> {
         ),
       ),
     );
-    return new Container(
+    return new Expanded(
       child: new Center(
         child: Column(
           children: <Widget>[

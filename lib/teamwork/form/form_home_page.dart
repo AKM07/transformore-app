@@ -15,45 +15,64 @@ class FormHome extends StatelessWidget {
     final double itemWidth = 300;
 
     Widget buildBackground() => new Scaffold(
-          appBar: PreferredSize(
-              preferredSize: Size.fromHeight(150), // here the desired height
-              child: AppBar(
-                title: Text("Form"),
-                leading: new IconButton(
-                  icon: new Icon(
-                    FeatherIcons.list,
-                    color: Colors.white,
-                  ),
-                ),
-              )),
-        );
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(150), // here the desired height
+          child: AppBar(
+            title: Text("Form"),
+            leading: new IconButton(
+              icon: new Icon(
+                FeatherIcons.list,
+                color: Colors.white,
+              ),
+            ),
+          )),
+    );
 
     children.add(buildBackground());
 
     final updateCard = Container(
       height: 300,
       padding: EdgeInsets.all(10),
-      child: Card(
-        color: Colors.blue[700],
-        elevation: 3,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Center(
-              child: Icon(
-                FeatherIcons.externalLink,
-                color: Colors.white,
+      child: GestureDetector(
+        child: Card(
+          color: Colors.blue[700],
+          elevation: 3,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Center(
+                child: Icon(
+                  FeatherIcons.externalLink,
+                  color: Colors.white,
+                ),
               ),
-            ),
-            Center(
-              child: Text(
-                "Update Roster",
-                style: TextStyle(color: Colors.white, fontSize: 14),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Center(
+                    child: Text(
+                      "Update",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      "Roster",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  )
+                ],
               ),
-            )
-          ],
+            ],
+          ),
         ),
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => SetRosterPage()));
+        },
       ),
     );
 
@@ -74,12 +93,25 @@ class FormHome extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              Center(
-                child: Text(
-                  "Set Roster",
-                  style: TextStyle(color: Colors.white, fontSize: 14),
-                ),
-              )
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Center(
+                    child: Text(
+                      "Set",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      "Roster",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ),
@@ -107,12 +139,25 @@ class FormHome extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              Center(
-                child: Text(
-                  "Attendance Revision",
-                  style: TextStyle(color: Colors.white, fontSize: 14),
-                ),
-              )
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Center(
+                    child: Text(
+                      "Attendance",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      "Revision",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ),
@@ -140,12 +185,25 @@ class FormHome extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              Center(
-                child: Text(
-                  "Leave Application",
-                  style: TextStyle(color: Colors.white, fontSize: 14),
-                ),
-              )
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Center(
+                    child: Text(
+                      "Leave",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      "Application",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ),
@@ -154,7 +212,7 @@ class FormHome extends StatelessWidget {
               MaterialPageRoute(builder: (context) => AttendanceRevisionPage()));
         },
       ),
-    );;
+    );
 
     final gridContainer = Container(
       color: Colors.white,
@@ -193,7 +251,7 @@ class FormHome extends StatelessWidget {
                               fontWeight: FontWeight.bold)),
                       Text("Pilih menu yang akan dioperasikan",
                           style:
-                              TextStyle(color: Colors.blue[700], fontSize: 14)),
+                          TextStyle(color: Colors.blue[700], fontSize: 14)),
                       gridContainer
                     ],
                   )),
