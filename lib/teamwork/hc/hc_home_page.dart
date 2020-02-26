@@ -34,7 +34,7 @@ class HCHomePage extends StatelessWidget {
       padding: EdgeInsets.all(10),
       child: GestureDetector(
         child: Card(
-          color: Colors.blue[700],
+          color: Color(0xff4969A5),
           elevation: 3,
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -67,7 +67,7 @@ class HCHomePage extends StatelessWidget {
       padding: EdgeInsets.all(10),
       child: GestureDetector(
         child: Card(
-          color: Colors.blue[700],
+          color: Color(0xff4969A5),
           elevation: 3,
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -109,7 +109,7 @@ class HCHomePage extends StatelessWidget {
     );
 
     final cards = Container(
-      height: 500,
+      height: 300,
       margin: EdgeInsets.fromLTRB(15, 100, 15, 0),
       child: Card(
         child: Center(
@@ -124,12 +124,12 @@ class HCHomePage extends StatelessWidget {
                     children: <Widget>[
                       Text("Pilih Menu",
                           style: TextStyle(
-                              color: Colors.blue[700],
+                              color: Color(0xff4969A5),
                               fontSize: 18,
                               fontWeight: FontWeight.bold)),
                       Text("Pilih menu yang akan dioperasikan",
                           style:
-                          TextStyle(color: Colors.blue[700], fontSize: 14)),
+                          TextStyle(color: Color(0xff4969A5), fontSize: 14)),
                       gridContainer
                     ],
                   )),

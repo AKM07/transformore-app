@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       title: 'Transformore',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.blue[700],
+        primaryColor: const Color(0xff4969A5),
         fontFamily: 'Poppins'
       ),
       home: LoginPage(),

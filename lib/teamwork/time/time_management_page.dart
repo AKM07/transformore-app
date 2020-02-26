@@ -34,7 +34,7 @@ class TimeManagementState extends State<TimeManagementPage> with SingleTickerPro
     return new Scaffold(
       appBar: new AppBar(
         title: Text("Time Management"),
-        backgroundColor: Colors.blue[700],
+        backgroundColor: Color(0xff4969A5),
         bottom: new TabBar(
             controller: controller,
             tabs: <Widget>[

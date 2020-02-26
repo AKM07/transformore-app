@@ -35,7 +35,7 @@ class TeamworkHome extends StatelessWidget {
         children: <Widget>[
           GestureDetector(
             child: Card(
-                color: Colors.blue[700],
+                color: Color(0xff4969A5),
                 child: Container(
                   padding: EdgeInsets.all(15),
                   child: Icon(FeatherIcons.list, color: Colors.white,),
@@ -49,7 +49,7 @@ class TeamworkHome extends StatelessWidget {
           ),
           Text(
             "Form",
-            style: TextStyle(color: Colors.blue[700], fontSize: 14),
+            style: TextStyle(color: Color(0xff4969A5), fontSize: 14),
           )
         ],
       );
@@ -60,7 +60,7 @@ class TeamworkHome extends StatelessWidget {
       children: <Widget>[
         GestureDetector(
           child: Card(
-            color: Colors.blue[700],
+            color: Color(0xff4969A5),
             child: Container(
               padding: EdgeInsets.all(15),
               child: Icon(FeatherIcons.fileText, color: Colors.white,),
@@ -74,7 +74,7 @@ class TeamworkHome extends StatelessWidget {
         ),
         Text(
           "Report",
-          style: TextStyle(color: Colors.blue[700], fontSize: 14),
+          style: TextStyle(color: Color(0xff4969A5), fontSize: 14),
         )
       ],
     );
@@ -84,7 +84,7 @@ class TeamworkHome extends StatelessWidget {
       children: <Widget>[
         GestureDetector(
           child: Card(
-            color: Colors.blue[700],
+            color: Color(0xff4969A5),
             child: Container(
               padding: EdgeInsets.all(15),
               child: Icon(FeatherIcons.checkSquare, color: Colors.white,),
@@ -97,7 +97,7 @@ class TeamworkHome extends StatelessWidget {
         ),
         Text(
           "Approval",
-          style: TextStyle(color: Colors.blue[700], fontSize: 14),
+          style: TextStyle(color: Color(0xff4969A5), fontSize: 14),
         )
       ],
     );
@@ -108,7 +108,7 @@ class TeamworkHome extends StatelessWidget {
       children: <Widget>[
         GestureDetector(
           child: Card(
-            color: Colors.blue[700],
+            color: Color(0xff4969A5),
             child: Container(
               padding: EdgeInsets.all(15),
               child: Icon(FeatherIcons.clock, color: Colors.white,),
@@ -121,7 +121,7 @@ class TeamworkHome extends StatelessWidget {
         ),
         Text(
           "Time",
-          style: TextStyle(color: Colors.blue[700], fontSize: 14),
+          style: TextStyle(color: Color(0xff4969A5), fontSize: 14),
         )
       ],
     );
@@ -132,7 +132,7 @@ class TeamworkHome extends StatelessWidget {
       children: <Widget>[
         GestureDetector(
           child: Card(
-            color: Colors.blue[700],
+            color: Color(0xff4969A5),
             child: Container(
               padding: EdgeInsets.all(15),
               child: Icon(FeatherIcons.grid, color: Colors.white,),
@@ -145,7 +145,7 @@ class TeamworkHome extends StatelessWidget {
         ),
         Text(
           "HC",
-          style: TextStyle(color: Colors.blue[700], fontSize: 14),
+          style: TextStyle(color: Color(0xff4969A5), fontSize: 14),
         )
       ],
     );
@@ -169,6 +169,7 @@ class TeamworkHome extends StatelessWidget {
 
 
     final cards = Container(
+      height: 300,
       margin: EdgeInsets.fromLTRB(15, 100, 15, 0),
       child: Card(
         child: Center(
@@ -183,12 +184,12 @@ class TeamworkHome extends StatelessWidget {
                     children: <Widget>[
                       Text("Pilih Menu",
                           style: TextStyle(
-                              color: Colors.blue[700],
+                              color: Color(0xff4969A5),
                               fontSize: 18,
                               fontWeight: FontWeight.bold)),
                       Text("Pilih menu yang akan dioperasikan",
                           style:
-                              TextStyle(color: Colors.blue[700], fontSize: 14)),
+                              TextStyle(color: Color(0xff4969A5), fontSize: 14)),
                       gridContainer
                     ],
                   )),
@@ -200,9 +201,14 @@ class TeamworkHome extends StatelessWidget {
     children.add(cards);
 
     return Scaffold(
-      body: Stack(
-        children: children,
-      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color(0xff4969A5)
+        ),
+        child: Stack(
+          children: children,
+        ),
+      )
     );
   }
 }

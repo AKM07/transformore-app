@@ -61,7 +61,7 @@ class HomePageState extends State<HomePage> {
               child: Text(
                 "Selamat Datang",
                 style: TextStyle(
-                    color: Colors.blue[700],
+                    color: Color(0xff4969A5),
                     fontSize: 18,
                     fontWeight: FontWeight.bold),
               ),
@@ -73,7 +73,7 @@ class HomePageState extends State<HomePage> {
               margin: EdgeInsets.only(bottom: 5),
               child: Text(
                 "User Fullname",
-                style: TextStyle(color: Colors.blue[700], fontSize: 14),
+                style: TextStyle(color: Color(0xff4969A5), fontSize: 14),
               ),
             ),
           ),
@@ -83,7 +83,7 @@ class HomePageState extends State<HomePage> {
               margin: EdgeInsets.only(bottom: 5),
               child: Text(
                 "NIP 1234567",
-                style: TextStyle(color: Colors.blue[700], fontSize: 14),
+                style: TextStyle(color: Color(0xff4969A5), fontSize: 14),
               ),
             ),
           ),
@@ -137,7 +137,7 @@ class HomePageState extends State<HomePage> {
     final bottomNavBar = BottomNavigationBar(
       items: bottomNavBarItems,
       currentIndex: tabIndex,
-      selectedItemColor: Colors.blue[700],
+      selectedItemColor: Color(0xff4969A5),
       unselectedItemColor: Colors.grey,
       onTap: onNavBarTapped,
     );

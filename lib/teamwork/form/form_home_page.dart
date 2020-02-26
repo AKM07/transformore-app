@@ -19,12 +19,6 @@ class FormHome extends StatelessWidget {
           preferredSize: Size.fromHeight(150), // here the desired height
           child: AppBar(
             title: Text("Form"),
-            leading: new IconButton(
-              icon: new Icon(
-                FeatherIcons.list,
-                color: Colors.white,
-              ),
-            ),
           )),
     );
 
@@ -231,7 +225,7 @@ class FormHome extends StatelessWidget {
     );
 
     final cards = Container(
-      height: 500,
+      height: 300,
       margin: EdgeInsets.fromLTRB(15, 100, 15, 0),
       child: Card(
         child: Center(
